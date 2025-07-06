@@ -1,85 +1,90 @@
 
 # 🎙️ Speech Emotion Recognition with PyTorch + Streamlit
 
-A Deep Learning project that recognizes **human emotions from voice** using **MFCC audio features** and a **BiLSTM model** trained on the RAVDESS dataset. The project includes a full pipeline: preprocessing, training, evaluation, and a real-time Streamlit web app.
+A Deep Learning app that detects **emotions from voice recordings** using MFCC audio features and a BiLSTM model. Built with PyTorch for training and Streamlit for a real-time, interactive UI.
 
 ---
 
-## 📌 Project Highlights
+## 🚀 Features
 
-- 🔊 Input: `.wav` audio files (speech only)
-- 🎯 Output: Predicted emotion (e.g., happy, sad, angry, calm...)
-- 🧠 Model: Bidirectional LSTM using PyTorch
-- 📊 Evaluation: Accuracy, F1-score, and confusion matrix
-- 💬 Web App: Built with Streamlit for real-time emotion detection
+🔊 Upload `.wav` speech audio files  
+🧠 Extract MFCC features using Librosa  
+📚 Trained BiLSTM (Bidirectional LSTM) for emotion classification  
+📈 Evaluate using confusion matrix, precision, recall, F1  
+💬 Streamlit app for real-time voice emotion prediction  
+🧼 Clean UI with upload, play, and prediction  
+🔐 Dataset not included due to size (RAVDESS must be downloaded manually)
 
 ---
 
-## 🧠 Emotions Detected
+## 📁 Project Structure
 
-The model classifies audio into **8 emotion classes**:
+```
 
-```python
-['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
+speech-emotion-recognition/
+├── app.py                 # Streamlit web app
+├── train.py               # Model training
+├── evaluate.py            # Test evaluation and confusion matrix
+├── emotion\_bilstm.pth     # Trained model weights
+├── requirements.txt       # Python dependencies
+├── LICENSE
+├── .gitignore
+├── src/
+│   ├── model.py           # BiLSTM architecture
+│   ├── dataset.py         # PyTorch dataset and loader
+│   ├── preprocessing.py   # MFCC extraction
+│   └── **init**.py
+└── README.md
+
 ````
 
 ---
 
-## 📁 Folder Structure
+## ⚙️ Setup Instructions
 
-```
-speech-emotion-recognition/
-├── app.py                 # Streamlit UI
-├── train.py               # Model training script
-├── evaluate.py            # Model evaluation on test data
-├── emotion_bilstm.pth     # Trained PyTorch model
-├── requirements.txt       # Dependencies list
-├── .gitignore             # Git ignore rules
-├── LICENSE                # MIT license file
-├── src/
-│   ├── model.py           # BiLSTM model definition
-│   ├── dataset.py         # Custom PyTorch Dataset
-│   ├── preprocessing.py   # Audio feature extraction (MFCC)
-│   └── __init__.py
-└── README.md              # This file
-```
-
----
-
-## 🚀 How to Run
-
-### 1. Clone the Repo
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Meghashyam-adimallam/speech-emotion-recognition.git
 cd speech-emotion-recognition
-```
+````
 
-### 2. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-> Or install manually:
+Or install manually:
 
 ```bash
 pip install torch torchaudio librosa matplotlib seaborn scikit-learn streamlit
 ```
 
-### 3. Train the Model (Optional)
+### 3. Download the dataset (RAVDESS)
+
+Download only the **speech audio subset** from:
+📥 [https://zenodo.org/record/1188976](https://zenodo.org/record/1188976)
+
+Place the extracted folder like this:
+
+```
+data/raw_audio/Audio_Speech_Actors_01-24/
+```
+
+### 4. Train the model (optional)
 
 ```bash
 python train.py
 ```
 
-### 4. Evaluate on Test Set
+### 5. Evaluate on test set
 
 ```bash
 python evaluate.py
 ```
 
-### 5. Run the Streamlit App
+### 6. Launch the web app
 
 ```bash
 streamlit run app.py
@@ -87,50 +92,53 @@ streamlit run app.py
 
 ---
 
-## 🎙️ Streamlit App Preview
+## 💡 How It Works
 
-Upload a `.wav` file and see emotion prediction live!
-
-<!-- Optionally add a screenshot -->
-
-<!-- ![App Screenshot](link-to-screenshot.png) -->
+1. Uploads `.wav` file and loads audio
+2. Extracts MFCCs (Mel-frequency cepstral coefficients)
+3. Feeds the features into a trained BiLSTM
+4. Predicts one of 8 emotion classes
+5. Displays results in a user-friendly web UI
 
 ---
 
-## 📦 Dataset Used
+## 🧠 Emotion Classes
 
-> **RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)**
-> Only the speech audio subset was used.
-
-📥 Download here: [https://zenodo.org/record/1188976](https://zenodo.org/record/1188976)
-
-📝 **Note**: Audio files are not included in this repo due to size limits.
-Please download and place them in:
-
+```python
+['angry', 'calm', 'disgust', 'fearful', 'happy', 'neutral', 'sad', 'surprised']
 ```
-data/raw_audio/Audio_Speech_Actors_01-24/
-```
+
+---
+
+## 📎 Example Use Cases
+
+🎧 Build emotion-aware chatbots
+🎙️ Analyze call center customer sentiment
+🧠 Use in mental health voice analysis
+📈 Real-time emotion detection from voice commands
 
 ---
 
 ## 📊 Model Performance
 
-* Validation Accuracy: **\~48–50%**
-* Strong detection for: **angry**, **surprised**, **calm**
-* Evaluated using confusion matrix + F1 scores
-
----
-
-## 💡 Future Improvements
-
-* 🎤 Add microphone input support
-* 📈 Improve accuracy using spectrograms or CNN layers
-* ☁️ Deploy to Hugging Face Spaces or Streamlit Cloud
+* Validation Accuracy: \~48–50%
+* Strong predictions for: `angry`, `surprised`, `calm`
+* Evaluated using accuracy, confusion matrix, and F1-score
 
 ---
 
 [MIT License](LICENSE)
 
-```
+---
+
+## 🙌 Acknowledgements
+
+* RAVDESS dataset by Ryerson University
+* Librosa for audio feature extraction
+* PyTorch for deep learning training
+* Streamlit for the UI
+* Made with ❤️ by Meghashyam Adimallam
+
+````
 
 ---
