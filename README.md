@@ -1,14 +1,4 @@
-Perfect — this is nearly ready for GitHub! Let’s quickly clean and format the `README.md` properly so it:
 
-* Displays with clean markdown syntax
-* Has proper code blocks
-* Fixes folder tree formatting
-
----
-
-## ✅ Final Cleaned `README.md` (Copy This Version)
-
-````markdown
 # 🎙️ Speech Emotion Recognition with PyTorch + Streamlit
 
 A Deep Learning project that recognizes **human emotions from voice** using **MFCC audio features** and a **BiLSTM model** trained on the RAVDESS dataset. The project includes a full pipeline: preprocessing, training, evaluation, and a real-time Streamlit web app.
