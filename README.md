@@ -35,6 +35,7 @@ speech-emotion-recognition/
 ├── emotion_bilstm.pth     # Trained PyTorch model
 ├── requirements.txt       # Dependencies list
 ├── .gitignore             # Git ignore rules
+├── LICENSE                # MIT license file
 ├── src/
 │   ├── model.py           # BiLSTM model definition
 │   ├── dataset.py         # Custom PyTorch Dataset
@@ -90,9 +91,9 @@ streamlit run app.py
 
 Upload a `.wav` file and see emotion prediction live!
 
-<!-- Optionally add an image here -->
+<!-- Optionally add a screenshot -->
 
-<!-- ![Demo Screenshot](link-to-image.png) -->
+<!-- ![App Screenshot](link-to-screenshot.png) -->
 
 ---
 
@@ -128,29 +129,8 @@ data/raw_audio/Audio_Speech_Actors_01-24/
 
 ---
 
-## 👤 Author
+[MIT License](LICENSE)
 
-**Meghashyam Adimallam**
-[GitHub Profile →](https://github.com/Meghashyam-adimallam)
-
----
-
-## 📜 License
-
-This project is under the [MIT License](LICENSE).
-
-````
-
----
-
-### ✅ What To Do Now:
-1. Replace the content of your current `README.md` with the cleaned version above
-2. Save it
-3. Commit & push:
-```bash
-git add README.md
-git commit -m "Update cleaned README"
-git push
-````
+```
 
 ---
