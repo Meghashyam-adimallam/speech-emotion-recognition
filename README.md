@@ -1,7 +1,4 @@
-📄 README.md
-markdown
-Copy
-Edit
+
 # 🎙️ Speech Emotion Recognition with PyTorch + Streamlit
 
 A Deep Learning project that recognizes **human emotions from voice** using **MFCC audio features** and a **BiLSTM model** trained on the RAVDESS dataset. The project includes a full pipeline: preprocessing, training, evaluation, and a real-time Streamlit web app.
